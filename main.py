@@ -7,7 +7,7 @@ import random
 import  os
 
 KAFKA_INPUT_TOPIC_NAME_CONS = "linuxhint1"
-KAFKA_BOOTSTRAP_SERVERS_CONS = "77957721c61c.mylabserver.com:9092"
+KAFKA_BOOTSTRAP_SERVERS_CONS = "host.mylabserver.com:9092"
 MALL_LONGITUDE=78.446841
 MALL_LATITUDE=17.427229
 MALL_THRESHOLD_DISTANCE=100
@@ -23,15 +23,15 @@ if __name__ == "__main__":
     .appName("PySpark Structured Streaming with Kafka") \
     .master("local[*]") \
     .getOrCreate()
-    spark.conf.set("spark.sql.streaming.checkpointLocation","s3a://shuvabuc007/checkpoint/")
+    spark.conf.set("spark.sql.streaming.checkpointLocation","s3a://shuvabuc0/checkpoint/")
     #spark.sparkContext._jsc.hadoopConfiguration().set("com.amazonaws.services.s3.enableV4", "true")
     spark.sparkContext._jsc.hadoopConfiguration().set("fs.s3a.impl", "org.apache.hadoop.fs.s3a.S3AFileSystem")
     #spark.sparkContext._jsc.hadoopConfiguration().set("fs.s3a.aws.credentials.provider", \
     #                                                 "com.amazonaws.auth.InstanceProfileCredentialsProvider,com.amazonaws.auth.DefaultAWSCredentialsProviderChain")
     #spark.sparkContext._jsc.hadoopConfiguration().set("fs.AbstractFileSystem.s3a.impl", "org.apache.hadoop.fs.s3a.S3A")
 
-    spark.sparkContext._jsc.hadoopConfiguration().set("fs.s3a.access.key", "AKIAQUISU65OWAK5P6UM")
-    spark.sparkContext._jsc.hadoopConfiguration().set("fs.s3a.secret.key", "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")
+    spark.sparkContext._jsc.hadoopConfiguration().set("fs.s3a.access.key", "****")
+    spark.sparkContext._jsc.hadoopConfiguration().set("fs.s3a.secret.key", "*****")
     spark.sparkContext._jsc.hadoopConfiguration().set("fs.s3a.endpoint", "s3.us-east-1.amazonaws.com")
 
     print('v', spark.version)
